@@ -38,6 +38,14 @@
                             <p class="card-text">Humidity: {{ weather_data['main']['humidity'] }}%</p>
                             <p class="card-text">Wind Speed: {{ weather_data['wind']['speed'] }} m/s</p>
                         </div>
+                        <div class="card-body">
+                            <h3>What to do today...</h3>
+                            <ul>
+                                {% for activity in activities %}
+                                    <li> {{activity}} </li>
+                                {% endfor%}
+                            </ul>
+                        </div>
                     </div>
                 {% endif %}
             {% endif %}
