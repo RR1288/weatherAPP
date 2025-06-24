@@ -17,7 +17,7 @@
         <div class="container">
             <h1 class="text-center my-4">Weather App</h1>
             
-            <form method="POST" class=" form-inline justify-content-center">
+            <form method="POST" class="form-inline justify-content-center">
                 <div class="form-group mb-2">
                     <input type="text" class="form-control" name="city" placeholder="Enter city name" required>
                 </div>
@@ -40,9 +40,13 @@
                         </div>
                         <div class="card-body">
                             <h3>What to do today...</h3>
-                            <ul>
-                                {% for activity in activities %}
-                                    <li> {{activity}} </li>
+                            <ul class="list-group">
+                                {% for description, image_prompt in activities %}
+                                    <li class="list-group-item">
+                                        <strong>{{description}}</strong>
+                                        <br>
+                                        <small class="text-muted">{{image_prompt}}</small>
+                                    </li>
                                 {% endfor%}
                             </ul>
                         </div>
